@@ -27,10 +27,10 @@ void insert(HashTable *tb, char *key){
             break;
         }
     }
-    hash-='a';
+    hash-='a'; 
     while(strcmp(tb[hash].status,"occupied")==0){
         hash++;
-    }
+    } // from the begining of the function to here would be better to have a function
     tb[hash].key = key;
     tb[hash].status = "occupied";
  
@@ -109,9 +109,11 @@ void runCommand(HashTable *tb, char cmd, char *input)
         del(tb, input);
         break;
     default:
-        break;
+        fprintf(stderr, "Bad formatting! the first letter must be 'A' or 'D'.");
+        exit(-1);
     }
 }
+
 void processInputs(HashTable *tb, char **inputs, int inputSize)
 {
     for(int i = 0; i<inputSize ;i++)
