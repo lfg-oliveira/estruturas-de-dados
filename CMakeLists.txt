@@ -3,8 +3,8 @@ project(UniAssign VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
-
-add_executable(UniAssign main.cpp)
+file(GLOB SOURCES src/**.c)
+add_executable(UniAssign ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
